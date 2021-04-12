@@ -1,0 +1,13 @@
+AddDefaultCharset utf-8
+# Включаем модуль переписывания
+RewriteEngine On
+# Путь до корня сайта
+# RewriteBase /
+# Исключения – адреса, которые не нужно переписывать
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Правила изменения URL-адреса
+RewriteRule ^(.*) index.php?q=$0
+RewriteCond %{SERVER_PORT} !^443$
+
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
