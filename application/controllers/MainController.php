@@ -5,19 +5,25 @@ namespace application\controllers;
 use application\core\Controller;
 class MainController extends Controller {
     public function indexAction() {
-        $result = $this->model->getNews();
-        $vars = [
-          'news' => $result,
-        ];
-        $this->view->render('header');
-        $this->view->render('default','Страница входа', $vars );
+        $this->view->render('Главная Страница');
+    }
+
+    public function aboutAction() {
+        $this->view->render('Обо мне');
 
     }
-   // public function form1Action() {
-   //     require 'public/form1.php';
-   // }
-   // public function form2Action() {
-   //     require 'public/form2.php';
-   // }
+
+    public function contactAction() {
+        if (!empty($_POST)) {
+            $this->view->message('Отправлено','Форма работает');
+        }
+        $this->view->render('Контакты');
+    }
+
+    public function postAction() {
+        $this->view->render('Пост');
+
+    }
+
 }
 

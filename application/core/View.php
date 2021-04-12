@@ -7,6 +7,7 @@ class View {
 
     public $path; // Путь к вижу
     public $route;
+    public $layout = 'default';
 
 
     public function __construct($route) {
@@ -14,7 +15,7 @@ class View {
         $this->path = $route['controller'].'/'.$route['action'];
     }
 
-    public function render($layout= 'default',$title ='', $vars = []) {
+    public function render($title, $vars = []) {
 
         $path = 'application/views/'.$this->path.'.php';
         if (file_exists($path)) {
@@ -22,7 +23,7 @@ class View {
             ob_start();
             require $path;
             $content = ob_get_clean();
-            require 'application/views/layouts/'.$layout.'.php';
+            require 'application/views/layouts/'.$this->layout.'.php';
         } else {
             echo 'Вид не найден: '.$this->path;
         }

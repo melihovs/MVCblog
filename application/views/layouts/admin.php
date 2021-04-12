@@ -6,9 +6,8 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
-<h2>Шаблон по умолчанию</h2>
-    <?php echo $content;
-        //echo "Контент в шаблоне по умолчанию";?>
+<h2>Шаблон Админки</h2>
+<?php echo $content;
+//echo "Контент в шаблоне по умолчанию";?>
 </body>
 </html>
-

@@ -2,31 +2,45 @@
 // маршруты
 // параметр названия страницы
 return [
+    // MainController
     '' => [
         'controller' => 'main',
         'action' => 'index',
     ],
-   // 'main/form1' => [
-   //     'controller' => 'main',
-   //     'action' => 'form1',
-   // ],
-   // 'main/form2' => [
-   //     'controller' => 'main',
-   //     'action' => 'form2',
-   // ],
-    'account/login' => [
-        'controller' => 'account',
+    'about' => [
+        'controller' => 'main',
+        'action' => 'about',
+    ],
+
+    'contact' => [
+        'controller' => 'main',
+        'action' => 'contact',
+    ],
+
+    'post' => [
+        'controller' => 'main',
+        'action' => 'post',
+    ],
+
+    // AdminController
+    'login' => [
+        'controller' => 'admin',
         'action' => 'login',
     ],
-
-    'account/register' => [
-        'controller' => 'account',
-        'action' => 'register',
+    'logout' => [
+        'controller' => 'admin',
+        'action' => 'logout',
     ],
-
-    'news/show' => [
-        'controller' => 'news',
-        'action' => 'show',
+    'add' => [
+        'controller' => 'admin',
+        'action' => 'add',
     ],
-
+    'edit' => [
+        'controller' => 'admin',
+        'action' => 'edit',
+    ],
+    'delete' => [
+        'controller' => 'admin',
+        'action' => 'delete',
+    ],
 ];

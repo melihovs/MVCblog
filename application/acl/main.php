@@ -2,6 +2,10 @@
 
 return [
     'all' => [
+        'index',
+        'about',
+        'contact',
+        'post',
         // Страницы доступные для всех пользователей
     ],
     'authorize' => [

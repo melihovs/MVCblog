@@ -14,6 +14,10 @@ return [
     ],
     'admin' => [
         // Администратор
+        'logout',
+        'add',
+        'edit',
+        'delete',
     ],
 
 ];
