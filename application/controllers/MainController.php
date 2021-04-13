@@ -15,7 +15,11 @@ class MainController extends Controller {
 
     public function contactAction() {
         if (!empty($_POST)) {
-            $this->view->message('Отправлено','Форма работает');
+            if (!$this->model->contactValidate($_POST)){
+                $this->view->message('Error', $this->model->error);
+            }
+            mail($this->config['adminMail'], 'Сообщение из блога', ''.$_POST['name'] . '|' . $_POST['message']);
+            $this->view->message('OK','Сообщение отправлено администратору');
         }
         $this->view->render('Контакты');
     }

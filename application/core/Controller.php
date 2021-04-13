@@ -11,9 +11,11 @@ abstract class Controller
     public $route;
     public $view;
     public $acl;
+    protected $config;
 
     public function __construct($route)
     {
+        $this->config = require 'application/config/parametrs.php';
         $this->route = $route;
         if (!$this->checkAcl()){
             View::errorCode(403);

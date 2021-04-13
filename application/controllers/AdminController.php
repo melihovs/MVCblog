@@ -9,10 +9,17 @@ class AdminController extends Controller {
     {
         parent::__construct($route);
         $this->view->layout = 'admin';
-        $_SESSION['admin'] = 1;
+      //  $_SESSION['admin'] = 1;
     }
 
     public function loginAction() {
+        if (!empty($_POST)) {
+            if (!$this->model->loginValidate($_POST)) {
+                $this->view->message('Error', $this->model->error);
+            }
+            $_SESSION['admin'] = true;
+            $this->view->location('add');
+        }
         $this->view->render('Вход');
     }
 
