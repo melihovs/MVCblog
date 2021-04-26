@@ -43,4 +43,8 @@ return [
         'controller' => 'admin',
         'action' => 'delete',
     ],
+    'posts' => [
+        'controller' => 'admin',
+        'action' => 'posts',
+    ],
 ];

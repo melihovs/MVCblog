@@ -1,0 +1,9 @@
+<a href="/">Главная страница</a>
+<a href="/about">Обо мне</a>
+<a href="/contact">Контакты</a>
+<a href="/post">Посты</a>
+<a href="/login">Вход в Админку</a>
+<a href="/add">Добавить Новость</a>
+<a href="/edit">Редактировать новость</a>
+<a href="/posts">Посты</a>
+<a href="/logout">Выход</a>
