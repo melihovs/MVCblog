@@ -37,11 +37,21 @@ class Admin extends Model
             $this->error = 'Текст должен содержать от 10 до 5000 символов';
             return false;
         }
-        if (empty($_FILES['img']['tmp_name']) and $type == 'add') {
+       /* if (empty($_FILES['img']['tmp_name']) and $type == 'add') {
             $this->error = 'Изображение не выбрано';
             return false;
-        }
+        }*/
         return true;
+    }
+
+    public function postAdd($post) {
+        $params = [
+            'id' => '',
+            'name' => $post['name'],
+            'description' => $post['description'],
+            'text' => $post['text'],
+        ];
+        $this->db->query('INSERT INTO posts VALUES (:id, :name, :description, :text)',$params);
     }
 
 

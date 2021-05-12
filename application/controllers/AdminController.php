@@ -31,6 +31,7 @@ class AdminController extends Controller {
             if (!$this->model->postValidate($_POST,'add')) {
                 $this->view->message('Error', $this->model->error);
             }
+            $this->model->postAdd($_POST);
             $this->view->message('Succes', 'OK');
         }
         $this->view->render('Добавить пост');
@@ -51,7 +52,8 @@ class AdminController extends Controller {
     }
 
     public function deleteAction() {
-        exit ('Удаление поста');
+        debug($this->route['id']);
+        echo 'Удаление поста';
     }
 
     public function logoutAction() {
